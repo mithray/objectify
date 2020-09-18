@@ -1,0 +1,18 @@
+{
+  "name": "@mithray/objectify",
+  "version": "0.0.1",
+  "description": "Takes a directory of config files and builds an object from them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "change-case": "^4.1.1",
+    "fast-xml-parser": "^3.17.4",
+    "nested-property": "^2.0.2",
+    "readdirp": "^3.4.0",
+    "yaml": "^1.10.0"
+  }
+}
