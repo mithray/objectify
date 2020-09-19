@@ -37,7 +37,7 @@ async function readFile(inputPath){
     var tObj = parser.getTraversalObj(data,options);
     var obj = parser.convertToJson(tObj,options);
   }
-  if (inputPath.endsWith('.yml')){
+  if (inputPath.endsWith('.yml') || inputPath.endsWith('.yaml')){
     obj = YAML.parse(data)
   } 
   return obj
@@ -83,6 +83,7 @@ async function buildObjectFromPath(inputPath, options={}){
   const obj = {}
   const arr = []
   commonPrefix = commonPrefix.replace(/(.*)\/.*/,'$1')
+	console.log(commonPrefix)
   for (let i = 0; i < files.length; i++ ){
     const entry = files[i]
     const fullPath = entry.fullPath
@@ -90,6 +91,7 @@ async function buildObjectFromPath(inputPath, options={}){
       .replace(commonPrefix,'')
       .replace(/^\//,'') 
       .replace(/.yml$/,'')
+      .replace(/.yaml$/,'')
       .replace(/.xml$/,'')
       .replace(/.json$/,'')
     var heirarchy = relPath.split('/') 
